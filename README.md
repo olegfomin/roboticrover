@@ -17,21 +17,21 @@ for the robot to play on.
 can be used to transport a tennis ball cannon around or for the vacuum 
 cleaner to move it to and fro across the court
 * The python software for the robot that is currently has
-** 4 omni-directional wheels attached to 20W DC motor each
-** Web-camera with pan/tilt servo mechanisms
-** Microphone attached to the same support plate as the camera
-** Good lythium 10A/H battery that is currently mounted on the top of
+	* 4 omni-directional wheels attached to 20W DC motor each
+	* Web-camera with pan/tilt servo mechanisms
+	* Microphone attached to the same support plate as the camera
+	* Good lythium 10A/H battery that is currently mounted on the top of
 the chassis. In future models of the robot the battery should come down
 because it is quite heavy
-** Raspberry Pi micro controller to where web-cam and microphone are
+	* Raspberry Pi micro controller to where web-cam and microphone are
 connected and that is supposed to be connected to the
 cloud all the time but can make simple decisions itself when the 
 link with a cloud is broken
-** Raspberry Pi also responsible for counting the number of revolutions
+	* Raspberry Pi also responsible for counting the number of revolutions
 each of four wheels makes with the help of hall-effect sensors also
 attached to the chassis 
-** Arduino is currently only reslonsible for switching on and off
+	* Arduino is currently only reslonsible for switching on and off
 the set of four relays that define the dirrection and duration 
 all the wheels are turning to
-** Number of DC voltage buck-down regulators
+	* Number of DC voltage buck-down regulators
   
