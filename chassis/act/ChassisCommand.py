@@ -1,4 +1,7 @@
-''' There are six commands that are being used for now
+''' 
+Primarily this class keeps the connection to Arduino and Red relays
+together for bow
+There are six commands that are being used for now
 'F' for Forward
 'B' for Backward
 'L' for Left
@@ -57,26 +60,34 @@ class ChassisCommand:
 class ChassisForward(ChassisCommand):
 	command = "F" # Going forward
 	def undo(self):
-		return ChassisBackward(self.arduinoConnection, self.redThrothleLeft, self.redThrothleRight)
+		return ChassisBackward(self.arduinoConnection, 
+							self.redRelay4, 
+							self.redRelay5)
 	
 	
 class ChassisBackward(ChassisCommand):
 	command = "B" # Going forward
-	def undo():
-		return ChassisForward(self.arduinoConnection, self.redThrothleLeft, self.redThrothleRight)
+	def undo(self):
+		return ChassisForward(self.arduinoConnection, 
+							self.redRelay4, 
+							self.redRelay5)
 		
 class ChassisTurnRight(ChassisCommand):
 	command = "R" # Going right
-	def undo():
-		return ChassisTurnLeft(self.arduinoConnection, self.redThrothleLeft, self.redThrothleRight)
+	def undo(self):
+		return ChassisTurnLeft(self.arduinoConnection, 
+							self.redRelay4, 
+							self.redRelay5)
 		
 class ChassisTurnLeft(ChassisCommand):
 	command = "L" # Going left
-	def undo():
-		return ChassisTurnRight(self.arduinoConnection, self.redThrothleLeft, self.redThrothleRight)
+	def undo(self):
+		return ChassisTurnRight(self.arduinoConnection, 
+							self.redRelay4, 
+							self.redRelay5)
 
 		
-if __name__ == '__main__':
+if __name__ == '__main__': # Testing at least one command to go all way
 	import RPi.GPIO as GPIO	
 	GPIO.setmode(GPIO.BCM) # satisfying relay's pre-condition
 
